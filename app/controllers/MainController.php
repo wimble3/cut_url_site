@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use core\classes\Controller;
+use core\classes\Db;
 
 class MainController extends Controller
 {

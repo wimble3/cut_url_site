@@ -5,11 +5,11 @@ namespace core\classes;
 use core\traits\TSingleton;
 use app\Config;
 
-class Connector
+class Db
 {
     use TSingleton;
 
-    public \mysqli $connect;
+    public \mysqli|null $connect;
 
     private function __construct()
     {
@@ -19,14 +19,5 @@ class Connector
             Config::DB_PASSWORD,
             Config::DB_NAME
         );
-        if ($this->connect->connect_error) {
-            echo $this->connect->connect_error;
-            exit();
-        }
-    }
-
-    public function check()
-    {
-        dd([1, 1]);
     }
 }

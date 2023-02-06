@@ -20,7 +20,7 @@ class Router
         $this->route();
     }
 
-    private function addUrl($url, $params): void
+    private function addUrl(string $url, array $params): void
     {
         $url = '#^' . $url . '$#';
         $this->urls[$url] = $params;

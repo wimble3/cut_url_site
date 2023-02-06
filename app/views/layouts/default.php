@@ -1,11 +1,20 @@
+<?php
+
+use core\classes\Asset;
+
+$asset = Asset::getInstance();
+$asset->clear();
+$asset->addCss('css/default.css');
+$asset->addCss('css/styles.css');
+$asset->addJs('js/scripts.js');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php $asset->getMeta(); ?>
     <title><?= $title ?></title>
-    <!--    <link rel="stylesheet" href="/assets/css/default.css">-->
-    <!--    <link rel="stylesheet" href="/assets/css/styles.css">-->
+    <?php $asset->getCss(); ?>
 </head>
 <body>
 <header class="header">
@@ -16,7 +25,7 @@
 
 <?= $content ?>
 
-<!--<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
-<!--<script src="/assets/js/scripts.js"></script>-->
+<?php $asset->getJquery(); ?>
+<?php $asset->getJs(); ?>
 </body>
 </html>

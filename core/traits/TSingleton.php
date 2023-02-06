@@ -4,7 +4,7 @@ namespace core\traits;
 
 trait TSingleton
 {
-    private static self $instance;
+    private static $instance;
 
     private function __construct()
     {
