@@ -50,13 +50,11 @@ class Router
                     $controller = new $controllerPath($this->params);
                     $controller->$action();
                 } else {
-                    echo Config::DEBUG ? '[ERROR] Action not found: ' . $action : '404';
+                    echo Config::DEBUG ? '[ERROR] Action not found: ' . $action : View::errorCode(404);
                 }
-            } else {
-                echo Config::DEBUG ? '[ERROR] Controller not found: ' . $controllerPath : '404';
             }
         } else {
-            echo '404';
+            echo View::errorCode(404);
         }
     }
 }
