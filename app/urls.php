@@ -6,8 +6,8 @@ return [
         'action' => 'index',
     ],
 
-    'login' => [
-        'controller' => 'Main',
+    'account/login' => [
+        'controller' => 'Account',
         'action' => 'login',
     ],
 ];

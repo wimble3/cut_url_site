@@ -1,8 +1,8 @@
 <?php
 
 use core\classes\Router;
-
 use app\Config;
+use core\classes\View;
 
 
 spl_autoload_register(function ($class) {
@@ -10,7 +10,7 @@ spl_autoload_register(function ($class) {
     if (file_exists($path)) {
         require_once $path;
     } else {
-        die('500');
+        echo Config::DEBUG ? '[ERROR] This controller not found' : View::errorCode(404);
     }
 });
 
