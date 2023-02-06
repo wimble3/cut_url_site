@@ -12,10 +12,9 @@ $asset->addJs('js/scripts.js');
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php $asset->getMeta(); ?>
     <title><?= $title ?></title>
-    <?php $asset->getCss() ?>
+    <?php $asset->getCss(); ?>
 </head>
 <body>
 <header class="header">
@@ -27,6 +26,6 @@ $asset->addJs('js/scripts.js');
 <?= $content ?>
 
 <?php $asset->getJquery(); ?>
-<?php $asset->getJs() ?>
+<?php $asset->getJs(); ?>
 </body>
 </html>
