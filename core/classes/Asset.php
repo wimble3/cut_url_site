@@ -33,13 +33,15 @@ class Asset
 
     public function getJs(): void
     {
-        foreach ($this->js as $js) {
-            echo '<script type="text/javascript" src="' .
-                '../../../' .
-                Config::ASSET_PATH .
-                $js .
-                '"></script>' .
-                "\n";
+        if (!empty($this->js)) {
+            foreach ($this->js as $js) {
+                echo '<script type="text/javascript" src="' .
+                    '../../../' .
+                    Config::ASSET_PATH .
+                    $js .
+                    '"></script>' .
+                    "\n";
+            }
         }
     }
 
@@ -50,8 +52,8 @@ class Asset
 
     public function getMeta(): void
     {
-        echo '<meta charset="UTF-8">';
-        echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
+        echo '<meta charset="' . Config::ENCODING . '">' . "\n";
+        echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
     }
 
     public function getJquery(): void
