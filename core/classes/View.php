@@ -10,7 +10,7 @@ class View
     public string $contentPath;
     public string $layout = 'default';
 
-    public function __construct($params)
+    public function __construct(array $params)
     {
         $this->contentPath =
             $_SERVER['DOCUMENT_ROOT'] .
