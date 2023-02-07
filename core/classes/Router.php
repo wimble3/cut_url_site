@@ -7,7 +7,7 @@ use app\Config;
 class Router
 {
     protected array $urls;
-    protected array $params;
+    public array $params;
 
     public function __construct()
     {

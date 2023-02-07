@@ -4,7 +4,6 @@ use core\classes\Router;
 use app\Config;
 use core\classes\View;
 
-
 spl_autoload_register(function ($class) {
     $path = str_replace('\\', '/', $class . '.php');
     if (file_exists($path)) {
